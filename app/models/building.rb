@@ -1,4 +1,7 @@
 class Building < ApplicationRecord
+  has_many :offices
+  has_many :companies, through: :offices
+  has_many :employees, through: :companies
 
   def number_of_floors_available
     # Will not work until relationships and schema are corretly setup
